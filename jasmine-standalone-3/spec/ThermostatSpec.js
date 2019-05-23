@@ -70,4 +70,21 @@ describe("Thermostat", function() {
     expect(thermostat.maximumAllowedTemperature()).toEqual(25);
   })
 
+  it("The temperature can not go futher than the maximum allowed temperature", function(){
+    var times = 11;
+    for(var i=0; i < times; i++){
+        thermostat.up();
+    }
+    expect(thermostat.temperature).toEqual(25)
+  })
+
+  it("the temperature can not go further than the maximum allowed temperature",function(){
+    thermostat.turnPowerSaveOff();
+    for(var i=0; i < 20; i++){
+        thermostat.up();
+    }
+    expect(thermostat.temperature).toEqual(32)
+
+  })
+
 });
