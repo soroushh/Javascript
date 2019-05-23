@@ -1,36 +1,43 @@
 $(document).ready(function(){
   thermostat = new Thermostat();
-  $("#current_temperature").text(thermostat.temperature);
+  updateTemperature();
   $("#power_save_status").text(thermostat.powerSaveMode);
   $('#up').on('click', function() { // event listener
     thermostat.up(); // update model
-    $('#current_temperature').text(thermostat.temperature);
+    updateTemperature();
     $("#power_save_status").text(thermostat.powerSaveMode); // update view
   });
 
   $("#down").click(function(){
     thermostat.down();
-    $("#current_temperature").text(thermostat.temperature);
+    updateTemperature();
     $("#power_save_status").text(thermostat.powerSaveMode);
   })
 
   $("#reset").click(function(){
     thermostat.reset();
-    $("#current_temperature").text(thermostat.temperature);
+    updateTemperature();
     $("#power_save_status").text(thermostat.powerSaveMode);
   })
 
   $("#power_on").click(function(){
     thermostat.turnPowerSaveOn();
-    $("#current_temperature").text(thermostat.temperature);
+    updateTemperature();
     $("#power_save_status").text(thermostat.powerSaveMode)
   })
 
   $("#power_off").click(function(){
     thermostat.turnPowerSaveOff();
-    $("#current_temperature").text(thermostat.temperature);
+    updateTemperature();
     $("#power_save_status").text(thermostat.powerSaveMode);
   })
 
-  
+  function updateTemperature(){
+    $("#current_temperature").text(thermostat.temperature);
+    if(thermostat.energy_usage() === "low-usage"){ $("#current_temperature").css('color','green')}
+    else if (thermostat.energy_usage() === "medium-usage"){$("#current_temperature").css('color','blue')}
+    else {$("#current_temperature").css('color', 'red')}
+  }
+
+
 })
