@@ -29,4 +29,10 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(10)
   })
 
+  it("We can reset the thermostat's temperture to 20 centigrades", function(){
+    thermostat.up();
+    thermostat.reset()
+    expect(thermostat.temperture).toEqual(20)
+  })
+
 });

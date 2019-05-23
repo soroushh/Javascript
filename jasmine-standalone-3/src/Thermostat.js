@@ -8,5 +8,9 @@ Thermostat.prototype.up = function(){
 }
 
 Thermostat.prototype.down = function(){
-  if (this.temperature > 10) {this.temperature -= 1} ; 
+  if (this.temperature > 10) {this.temperature -= 1} ;
+}
+
+Thermostat.prototype.reset = function(){
+  this.temperture = 20 ; 
 }
