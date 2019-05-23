@@ -58,8 +58,16 @@ describe("Thermostat", function() {
     }
     thermostat.turnPowerSaveOn();
     expect(thermostat.temperature).toEqual(25)
-
   })
 
+  it("On power save mode, the maximum allowed temperature is 25 degrees",function(){
+    thermostat.turnPowerSaveOn();
+    expect(thermostat.maximumAllowedTemperature()).toEqual(25);
+  })
+
+  it("Not on power save mode, the maximum allowed temperature is 32 degrees",function(){
+    thermostat.turnPowerSaveOn();
+    expect(thermostat.maximumAllowedTemperature()).toEqual(25);
+  })
 
 });

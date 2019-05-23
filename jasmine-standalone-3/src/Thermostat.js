@@ -23,3 +23,8 @@ Thermostat.prototype.turnPowerSaveOn = function(){
   this.powerSaveMode = "on"
   if(this.temperature > 25){ this.temperature = 25}
 }
+
+Thermostat.prototype.maximumAllowedTemperature = function(){
+  if(this.powerSaveMode === "on"){return 25}
+  else{return 32}
+}
