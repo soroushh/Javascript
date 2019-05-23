@@ -14,3 +14,7 @@ Thermostat.prototype.down = function(){
 Thermostat.prototype.reset = function(){
   this.temperture = 20 ;
 }
+
+Thermostat.prototype.turnPowerSaveOff = function(){
+  this.powerSaveMode = "off"
+}
