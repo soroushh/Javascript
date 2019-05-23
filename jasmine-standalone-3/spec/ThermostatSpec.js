@@ -32,7 +32,7 @@ describe("Thermostat", function() {
   it("We can reset the thermostat's temperture to 20 centigrades", function(){
     thermostat.up();
     thermostat.reset();
-    expect(thermostat.temperture).toEqual(20);
+    expect(thermostat.temperature).toEqual(20);
   })
 
   it("Power save mode is on by default", function(){
@@ -48,6 +48,17 @@ describe("Thermostat", function() {
     thermostat.turnPowerSaveOff();
     thermostat.turnPowerSaveOn();
     expect(thermostat.powerSaveMode).toEqual("on");
+  })
+
+  it("The temperature will be 25 when turning on the power powerSaveMode and if the initial temperature is more than 25",function(){
+    thermostat.turnPowerSaveOff();
+    var times = 11;
+    for(var i=0; i < times; i++){
+        thermostat.up();
+    }
+    thermostat.turnPowerSaveOn();
+    expect(thermostat.temperature).toEqual(25)
+
   })
 
 
