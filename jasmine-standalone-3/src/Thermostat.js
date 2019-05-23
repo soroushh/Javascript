@@ -1,6 +1,6 @@
 function Thermostat(){
   this.temperature = 20;
-
+  this.powerSaveMode = "on";
 }
 
 Thermostat.prototype.up = function(){
@@ -12,5 +12,5 @@ Thermostat.prototype.down = function(){
 }
 
 Thermostat.prototype.reset = function(){
-  this.temperture = 20 ; 
+  this.temperture = 20 ;
 }
