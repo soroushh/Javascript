@@ -13,4 +13,12 @@ describe("Thermostat", function() {
 
     expect(thermostat.temperature).toEqual(21)
   })
+
+  it("we can decrease  the temperature of the thermostat",function(){
+
+    thermostat.down()
+
+    expect(thermostat.temperature).toEqual(19)
+  })
+
 });
