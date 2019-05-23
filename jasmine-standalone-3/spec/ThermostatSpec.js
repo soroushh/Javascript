@@ -87,4 +87,19 @@ describe("Thermostat", function() {
 
   })
 
+  it("we can define the thermostat's usage rate",function(){
+    thermostat.temperature = 15;
+    expect(thermostat.energy_usage()).toEqual("low-usage")
+  })
+
+  it("we can define the thermostat's usage rate",function(){
+    thermostat.temperature = 23;
+    expect(thermostat.energy_usage()).toEqual("medium-usage")
+  })
+
+  it("we can define the thermostat's usage rate",function(){
+    thermostat.temperature = 28;
+    expect(thermostat.energy_usage()).toEqual("high-usage")
+  })
+
 });
