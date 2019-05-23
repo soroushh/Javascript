@@ -31,8 +31,8 @@ describe("Thermostat", function() {
 
   it("We can reset the thermostat's temperture to 20 centigrades", function(){
     thermostat.up();
-    thermostat.reset()
-    expect(thermostat.temperture).toEqual(20)
+    thermostat.reset();
+    expect(thermostat.temperture).toEqual(20);
   })
 
   it("Power save mode is on by default", function(){
@@ -40,8 +40,15 @@ describe("Thermostat", function() {
   })
 
   it("We can turn the power save mode off", function(){
-    thermostat.turnPowerSaveOff()
-    expect(thermostat.powerSaveMode).toEqual("off")
+    thermostat.turnPowerSaveOff();
+    expect(thermostat.powerSaveMode).toEqual("off");
   })
+
+  it("We can turn the power save mode on", function(){
+    thermostat.turnPowerSaveOff();
+    thermostat.turnPowerSaveOn();
+    expect(thermostat.powerSaveMode).toEqual("on");
+  })
+
 
 });
